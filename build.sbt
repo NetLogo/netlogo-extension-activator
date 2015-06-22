@@ -21,3 +21,8 @@ enablePlugins(org.nlogo.build.NetLogoExtension)
 netLogoClassManager := "HelloScalaExtension"
 
 netLogoExtName      := "helloscala"
+
+netLogoZipSources   := false
+
+
+fork in run := true
