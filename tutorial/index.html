@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NetLogo Extension Tutorial</title>
+  </head>
+  <body>
+
+    <div>
+      <h2>First steps</h2>
+      <p>This template comes with everything you need to build an extension. You can find all of the extension code in <a href="#code/src/main/Hello.scala">the code tab, under src/main/Hello.scala</a>.</p>
+      <p>To build your extension:
+      <ol>
+        <li>Either press this button, or type <code>package</code> and hit enter in the search bar on the top: <button data-exec="package">Package</button></li>
+        <li>Go to the extensions folder. You can get their quickly by going to the <a href="#code">code tab</a>, hitting the "..." next to <b>Browse Code</b>, and clicking <b>Reveal in system</b>.</li>
+        <li>In the extension folder, you should see <b>hello-scala.zip</b> (or something else if you've changed the extension name). Unzip it to get a <b>hello-scala</b> folder that contains <b>hello-scala.jar</b>.</li>
+        <li>Drag the <b>hello-scala</b> folder to your NetLogo extensions folder.</li>
+        <li>Startup NetLogo, put <code>extensions [ hello-scala ]</code> in your code tab. Run <code>hello-scala:hello "Your Name"</code>.</li>
+    </div>
+
+    <div>
+      <h2>Try to implement these!</h2>
+      <h3>Goodbye!</h3>
+      <p>Make a <code>goodbye</code> primitive, just like the <code>hello</code>.</p>
+
+      <h3>Current time in milliseconds</h3>
+      <p>Try to implement a reporter that returns the current time in milliseconds. You can use <code>System.currentTimeMillis()</code> to get the current time in milliseconds. To return a number from a primitive, set its return type to <code>Syntax.numberType</code>.</p>
+
+      <h3>String repeater</h3>
+      <p>Try to implement a reporter that takes a string and a number and returns that string repeated that number of times. For instance, <code>hello-scala:repeat-string "hello" 3</code> would return <code>"hellohellohello"</code>. You can access the first argument to a primitive with <code>args(0)</code> and the second argument to a primitive with <code>args(1)</code>.</p>
+
+      <h3>List joiner</h3>
+      <p>Try to implement a reporter that takes a list and string and returns the items of the list, concatenated together, separated by the string. For instance, <code>hello-scala:join ["one" "two" "three"] ","</code> should return <code>"one,two,three"</code>.</p>
+      <p>To get a list from an argument, use <code>args(0).getList</code>. This gives you a <a href="https://ccl.northwestern.edu/netlogo/docs/scaladoc/#org.nlogo.api.LogoList"><code>LogoList</code></a>. Then, to join the elements of the list together, you can do <code>list.toVector.mkString(delim)</code>, where <code>delim</code> is the variable containing your delimiter string.</p>
+
+      <h3>String splitter</h3>
+      <p>Create a reporter that takes two strings, and splits the first string around occurrences of the second string. For instance, <code>hello-scala:split "one,two,three" ","</code> should return <code>["one" "two" "three"]</code>.</p>
+      <p>You can split a string like this in scala by doing <code>str.split(delim)</code>, where <code>str</code> is the variable containing the string you want to split, and <code>delim</code> contains the string you want to split around. This will give you an <code>Array</code>. To return this, you must first convert it to a <code>LogoList</code>. To do this, you can do <code>LogoList.fromIterator(array.toIterator)</code>.</p>
+
+      <h3>Move left and right</h3>
+      <p>Create two commands that tell turtles to move a number units sideways: one for left and one for right. You can base these commands off of <code>Wiggle</code>. To have a turtle move forward, use <code>turtle.jump(x)</code>, where <code>x</code> is the distance you want them to move forward.</p>
+    </div>
+  </body>
+</html>
