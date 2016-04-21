@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>NetLogo Extension Tutorial</title>
+    <base target="_blank">
   </head>
   <body>
 
@@ -23,21 +24,21 @@
       <p>Make a <code>goodbye</code> primitive, just like the <code>hello</code>.</p>
 
       <h3>Current time in milliseconds</h3>
-      <p>Try to implement a reporter that returns the current time in milliseconds. You can use <code>System.currentTimeMillis()</code> to get the current time in milliseconds. To return a number from a primitive, set its return type to <code>Syntax.numberType</code>.</p>
+      <p>Try to implement a reporter that returns the current time in milliseconds. You can use <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#currentTimeMillis--"><code>System.currentTimeMillis()</code></a> to get the current time in milliseconds. To return a number from a primitive, set its return type to <a href="https://ccl.northwestern.edu/netlogo/6.0-M5/scaladoc/scaladoc/#org.nlogo.core.Syntax$"><code>Syntax.numberType</code></a>.</p>
 
       <h3>String repeater</h3>
       <p>Try to implement a reporter that takes a string and a number and returns that string repeated that number of times. For instance, <code>hello-scala:repeat-string "hello" 3</code> would return <code>"hellohellohello"</code>. You can access the first argument to a primitive with <code>args(0)</code> and the second argument to a primitive with <code>args(1)</code>.</p>
 
       <h3>List joiner</h3>
       <p>Try to implement a reporter that takes a list and string and returns the items of the list, concatenated together, separated by the string. For instance, <code>hello-scala:join ["one" "two" "three"] ","</code> should return <code>"one,two,three"</code>.</p>
-      <p>To get a list from an argument, use <code>args(0).getList</code>. This gives you a <a href="https://ccl.northwestern.edu/netlogo/docs/scaladoc/#org.nlogo.api.LogoList"><code>LogoList</code></a>. Then, to join the elements of the list together, you can do <code>list.toVector.mkString(delim)</code>, where <code>delim</code> is the variable containing your delimiter string.</p>
+      <p>To get a list from an argument, use <code>args(0).getList</code>. This gives you a <a href="https://ccl.northwestern.edu/netlogo/6.0-M5/scaladoc/scaladoc/#org.nlogo.core.LogoList"><code>LogoList</code></a>. Then, to join the elements of the list together, you can do <a href="http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Vector"><code>list.toVector.mkString(delim)</code></a>, where <code>delim</code> is the variable containing your delimiter string.</p>
 
       <h3>String splitter</h3>
       <p>Create a reporter that takes two strings, and splits the first string around occurrences of the second string. For instance, <code>hello-scala:split "one,two,three" ","</code> should return <code>["one" "two" "three"]</code>.</p>
-      <p>You can split a string like this in scala by doing <code>str.split(delim)</code>, where <code>str</code> is the variable containing the string you want to split, and <code>delim</code> contains the string you want to split around. This will give you an <code>Array</code>. To return this, you must first convert it to a <code>LogoList</code>. To do this, you can do <code>LogoList.fromIterator(array.toIterator)</code>.</p>
+      <p>You can split a string like this in scala by doing <code>str.split(delim)</code>, where <code>str</code> is the variable containing the string you want to split, and <code>delim</code> contains the string you want to split around. This will give you an <a href="http://www.scala-lang.org/api/current/index.html#scala.Array"><code>Array</code></a>. To return this, you must first convert it to a <a href="https://ccl.northwestern.edu/netlogo/6.0-M5/scaladoc/scaladoc/#org.nlogo.core.LogoList"><code>LogoList</code></a>. To do this, you can do <a href="https://ccl.northwestern.edu/netlogo/6.0-M5/scaladoc/scaladoc/#org.nlogo.core.LogoList$"><code>LogoList.fromIterator(array.toIterator)</code></a>.</p>
 
       <h3>Move left and right</h3>
-      <p>Create two commands that tell turtles to move a number units sideways: one for left and one for right. You can base these commands off of <code>Wiggle</code>. To have a turtle move forward, use <code>turtle.jump(x)</code>, where <code>x</code> is the distance you want them to move forward.</p>
+      <p>Create two commands that tell turtles to move a number units sideways: one for left and one for right. You can base these commands off of <code>Wiggle</code>. To have a turtle move forward, use <a href="https://ccl.northwestern.edu/netlogo/6.0-M5/scaladoc/scaladoc/#org.nlogo.api.Turtle"><code>turtle.jump(x)</code></a>, where <code>x</code> is the distance you want them to move forward.</p>
     </div>
   </body>
 </html>
