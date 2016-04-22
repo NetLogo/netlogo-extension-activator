@@ -1,3 +1,4 @@
+import org.nlogo.core.LogoList
 import org.nlogo.api._
 import org.nlogo.core.Syntax._
 import org.nlogo.api.ScalaConversions._
@@ -19,7 +20,7 @@ class HelloString extends Reporter {
     // args(0) gives you the first argument, args(1) the second, and so forth
     val name = args(0).getString
     // In Scala, the last line of a function is what is returned.
-    "hello, " + name
+    "hello, " + name + "y Mc" + name + "face"
   }
 }
 
@@ -35,11 +36,11 @@ class Wiggle extends Command {
 
   override def perform(args: Array[Argument], context: Context): Unit = {
     val rng = context.getRNG // This lets us get random numbers
-    val turtle = context.getAgent.asInstanceOf[Turtle] // Gets the turtle that running the command
-    val angle = args(0).getIntValue // Get the first argument as a whole number
+    val turtle = context.getAgent.asInstanceOf[Turtle] // Gets the turtle that is running the command
+    val angle = args(0).getDoubleValue // Get the first argument as a number
 
     // This equivalent to having the turtle run
     // set heading heading + (random angle) - (random angle)
-    turtle.heading(turtle.heading + rng.nextInt(angle) - rng.nextInt(angle))
+    turtle.heading(turtle.heading + rng.nextDouble * angle - rng.nextDouble * angle)
   }
 }
